@@ -18,7 +18,7 @@ app.init = () => {
   });
 
   app.addRow.click(function(){
-    const newRow = `<tr class="item-row"><td class="js-delete-row"><span class="delete-icon" title="Remove row"><svg class="custom-icon-trash-o"><use xlink:href="#custom-icon-trash-o"></use></svg></span></td><td class="item-name"><textarea placeholder="Task/Item Name"></textarea></td><td class="description"> <textarea placeholder="Description"></textarea> </td><td> <input class="input-width rate" type="number" value="0.00"></td><td> <input class="input-width qty" type="number" value="0"> </td><td> <span class="line-total">$0.00</span> </td></tr>`;
+    const newRow = `<tr class="item-row"><td class="js-delete-row"><span class="delete-icon" title="Remove row"><svg class="custom-icon-trash-o"><use xlink:href="#custom-icon-trash-o"></use></svg></span></td><td class="item-name"><textarea placeholder="Task/Item Name"></textarea></td><td class="description"> <textarea placeholder="Description"></textarea> </td><td> <input class="input-width rate" type="number" value="0.00"></td><td> <input class="input-width qty" type="number" value="0"> </td><td> <span class="line-total">0.00</span> </td></tr>`;
 
     $('.js-invoice-body').append(newRow);
   });
