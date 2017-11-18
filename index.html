@@ -1,162 +1,167 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Invoice Me App</title>\
+  <title>Invoice Me App</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
   <script src="https://file.myfontastic.com/TaDm8TYMbDG5BcWa6WBsSG/icons.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page">
-    <form class="invoice">
-      <textarea class="header">INVOICE</textarea>
+  <div class="wrapper">
+    <a class="js-print button button-print" href="#">Print this invoice!</a>
 
-      <section class="meta-info">
-        <textarea class="address input-width--large input-height--large">Tiffany Tse
-21 Widmer Street
-Unit 2205
-Toronto, Canada M5V 0B8
+    <div class="page">
+      <form class="invoice">
+        <textarea class="header">Your Super Fancy Invoice</textarea>
 
-Phone: (613) 796-1460
-        </textarea>
+        <section class="meta-info">
+          <textarea class="address input-width--large input-height--large">Tiffany Tse
+  21 Widmer Street
+  Unit 2205
+  Toronto, Canada M5V 0B8
 
-      <div class="client">
-        <textarea class="client--title">Hacker You</textarea>
+  Phone: (613) 796-1460
+          </textarea>
 
-        <table class="marketing-table client-meta">
-          <tbody>
-            <tr>
-              <td class="client-meta--cell">Invoice #</td>
-              <td><textarea>000123</textarea></td>
-            </tr>
+        <div class="client">
+          <textarea class="client--title">Hacker You</textarea>
 
-            <tr>
-              <td class="client-meta--cell">Date</td>
-              <td><textarea class="client-date">November 11, 2017</textarea></td>
-            </tr>
-            <tr>
-              <td class="client-meta--cell">Amount Due</td>
-              <td><div class="js-balance">1186.50</div></td>
-            </tr>
-          </tbody>
-        </table>
+          <table class="marketing-table client-meta">
+            <tbody>
+              <tr>
+                <td class="client-meta--cell">Invoice #</td>
+                <td><textarea>000123</textarea></td>
+              </tr>
 
-      </section>
+              <tr>
+                <td class="client-meta--cell">Date</td>
+                <td><textarea class="client-date">November 11, 2017</textarea></td>
+              </tr>
+              <tr>
+                <td class="client-meta--cell">Amount Due</td>
+                <td><div class="balance js-balance">1186.50</div></td>
+              </tr>
+            </tbody>
+          </table>
 
-    <table class="invoice-items marketing-table">
-      <tbody class="js-invoice-body">
-        <tr>
-          <th>&nbsp;</th>
-          <th>Task/Item</th>
-          <th>Description</th>
-          <th>Rate</th>
-          <th>Hours/Quantity</th>
-          <th>Line Total</th>
-        </tr>
+        </section>
 
-        <tr class="item-row">
-          <td class="delete-row js-delete-row"><span class="delete-icon" title="Remove row"><svg class="custom-icon-trash-o"><use xlink:href="#custom-icon-trash-o"></use></svg></span></td>
-          <td class="item-name">
-            <div class="delete">
-              <textarea>Development</textarea>
-            </div>
-          </td>
-          <td class="description">
-            <textarea>Updates to Wordpress theme</textarea>
-          </td>
-          <td>
-            <input class="input-width rate" type="number" value="110.00">
-          </td>
-          <td>
-            <input class="input-width qty" type="number" value="5">
-          </td>
-          <td>
-            <span class="input-width line-total">550.00</span>
-          </td>
-        </tr>
+      <table class="invoice-items marketing-table">
+        <tbody class="js-invoice-body">
+          <tr>
+            <th>&nbsp;</th>
+            <th>Task/Item</th>
+            <th>Description</th>
+            <th>Rate</th>
+            <th>Hours/Quantity</th>
+            <th>Line Total</th>
+          </tr>
 
-        <tr class="item-row">
-          <td class="js-delete-row"><span class="delete-icon" title="Remove row"><svg class="custom-icon-trash-o"><use xlink:href="#custom-icon-trash-o"></use></svg></span></td>
-          <td class="item-name">
-            <div class="delete">
-              <textarea>Design</textarea>
-            </div>
-          </td>
-          <td class="description">
-            <textarea>Branding and logo design</textarea>
-          </td>
-          <td>
-            <input class="input-width rate" type="number" value="500.00">
-          </td>
-          <td>
-            <input class="input-width qty" type="number" value="1">
-          </td>
-          <td>
-            <span class="input-width line-total">500.00</span>
-          </td>
-        </tr>
-      </tbody>
-      <tfoot class="footer">
-        <tr>
-          <td class="footer--break" colspan="6">
-          </td>
-        </tr>
+          <tr class="item-row">
+            <td class="delete-row js-delete-row"><span class="delete-icon" title="Remove row"><svg class="custom-icon-trash-o"><use xlink:href="#custom-icon-trash-o"></use></svg></span></td>
+            <td class="item-name">
+              <div class="delete">
+                <textarea>Development</textarea>
+              </div>
+            </td>
+            <td class="description">
+              <textarea>Updates to Wordpress theme</textarea>
+            </td>
+            <td>
+              <input class="input-width rate" type="number" value="110.00">
+            </td>
+            <td>
+              <input class="input-width qty" type="number" value="5">
+            </td>
+            <td>
+              <span class="input-width line-total">550.00</span>
+            </td>
+          </tr>
 
-        <tr>
-          <td colspan="2" class="cell--borderless"><input type="button" class="button js-add-row" value="Add new row"></td>
-          <td colspan="2" class="cell--borderless"></td>
-          <td colspan="1" class="total-cell">Subtotal</td>
-          <td class="total-value">
-            <div class="js-subtotal">1050.00</div>
-          </td>
-        </tr>
+          <tr class="item-row">
+            <td class="js-delete-row"><span class="delete-icon" title="Remove row"><svg class="custom-icon-trash-o"><use xlink:href="#custom-icon-trash-o"></use></svg></span></td>
+            <td class="item-name">
+              <div class="delete">
+                <textarea>Design</textarea>
+              </div>
+            </td>
+            <td class="description">
+              <textarea>Branding and logo design</textarea>
+            </td>
+            <td>
+              <input class="input-width rate" type="number" value="500.00">
+            </td>
+            <td>
+              <input class="input-width qty" type="number" value="1">
+            </td>
+            <td>
+              <span class="input-width line-total">500.00</span>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot class="footer">
+          <tr>
+            <td class="footer--break" colspan="6">
+            </td>
+          </tr>
 
-        <tr>
-          <td colspan="4" class="cell--borderless"></td>
-          <td colspan="1" class="total-cell">HST (13%)</td>
-          <td class="total-value">
-            <div class="js-tax">136.50</div>
-          </td>
-        </tr>
+          <tr>
+            <td colspan="2" class="cell--borderless"><input type="button" class="button js-add-row" value="Add new row"></td>
+            <td colspan="2" class="cell--borderless"></td>
+            <td colspan="1" class="total-cell">Subtotal</td>
+            <td class="total-value">
+              <div class="js-subtotal">1050.00</div>
+            </td>
+          </tr>
 
-        <tr>
-          <td colspan="4" class="cell--borderless"></td>
-          <td colspan="1" class="total-cell">Total</td>
-          <td class="total-value">
-            <div class="js-total total">1186.50</div>
-          </td>
-        </tr>
+          <tr>
+            <td colspan="4" class="cell--borderless"></td>
+            <td colspan="1" class="total-cell">HST (13%)</td>
+            <td class="total-value">
+              <div class="js-tax">136.50</div>
+            </td>
+          </tr>
 
-        <tr>
-          <td colspan="4" class="cell--borderless"></td>
-          <td colspan="1" class="total-cell">Amount Paid</td>
-          <td class="total-paid">
-            <input class="js-paid paid" type="number" value="0.00">
-          </td>
-        </tr>
+          <tr>
+            <td colspan="4" class="cell--borderless"></td>
+            <td colspan="1" class="total-cell">Total</td>
+            <td class="total-value">
+              <div class="js-total total">1186.50</div>
+            </td>
+          </tr>
 
-        <tr>
-          <td colspan="4" class="cell--borderless"></td>
-          <td colspan="1" class="total-cell balance">Balance Due</td>
-          <td class="total-balance balance">
-            <div class="js-balance">1186.50</div>
-          </td>
-        </tr>
-      </tfoot>
-    </table>
+          <tr>
+            <td colspan="4" class="cell--borderless"></td>
+            <td colspan="1" class="total-cell">Amount Paid</td>
+            <td class="total-paid">
+              <input class="js-paid paid" type="number" value="0.00">
+            </td>
+          </tr>
 
-    <div class="terms">
-      <h5>Terms</h5>
-      <textarea>Invoice due 30 days from invoice date.</textarea>
+          <tr>
+            <td colspan="4" class="cell--borderless"></td>
+            <td colspan="1" class="total-cell balance">Balance Due</td>
+            <td class="total-balance balance">
+              <div class="js-balance">1186.50</div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="terms">
+        <h4>Terms</h4>
+        <textarea>Invoice due 30 days from invoice date.</textarea>
+      </div>
+
+      </form>
     </div>
 
-    </form>
   </div>
 
-  <a href="#">Print</a>
+
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-  <script src="app-dist.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

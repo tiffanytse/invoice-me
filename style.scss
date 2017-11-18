@@ -1,12 +1,19 @@
-$color-background: #f5f5f5;
 $color-white: #ffffff;
+$color-blackish: #222222;
+$color-blue: #3498db;
+$color-blue--light: #c7e7fc;
+$color-grey--med: #cccccc;
+$color-grey--light: #f5f5f5;
+$color-red: #c0392b;
+
+$color-background: $color-grey--light;
 $color-page: $color-white;
-$color-border: #cccccc;
+$color-border: $color-grey--med;
 $input-height: 30px;
 $input-width: 80px;
 $input-height--large: 120px;
 $input-width--large: 300px;
-$color-blue: #3498db;
+
 
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -16,16 +23,29 @@ $color-blue: #3498db;
 
 body {
   background: $color-background;
-  font: .875em/1.4 sans-serif;
+  font: .75em/1.4 sans-serif;
+}
+
+.wrapper,
+.page {
+  position: relative;
+  max-width: 70%;
+  min-width: 825px;
+  margin: 3em auto;
+}
+
+.button {
+  position: relative;
+  right: 0;
 }
 
 .page {
   background-color: $color-page;
   padding: 8em 4em 5em;
-  margin: 3em auto;
-  position: relative;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  max-width: 70%;
+  @media print {
+    box-shadow: none;
+  }
 }
 
 .header {
@@ -37,9 +57,15 @@ body {
   font-size: 2em;
   height: 3em;
   padding: 1em 0 0 0;
-  background-color: #222222;
+  background-color: $color-blackish;
   color: $color-page;
   text-align: center;
+  text-transform: uppercase;
+  background-color: $color-blackish;
+  @media print {
+    color: $color-blackish;
+    font-weight: bold;
+  }
 
   &:hover, &:focus{
     background-color: #555555;
@@ -67,13 +93,11 @@ textarea, input {
   padding: 5px 10px;
   width: auto;
 
-  &.input-height--large {
-  }
-
   &:hover, &:focus {
-    background-color: #c7e7fc;
+    background-color: $color-blue--light;
   }
 }
+
 .client {
   float: right;
   width: 250px;
@@ -99,31 +123,74 @@ textarea, input {
   display: block;
 }
 
+table{
+  width:100%;
+  margin:30px 0;
+  border-spacing:0;
+  border-collapse:collapse;
+  -webkit-text-size-adjust:100%;
 
-table{width:100%;margin:30px 0;border-spacing:0;border-collapse:collapse;     -webkit-text-size-adjust:100%}
-table th,
-table td{padding:10px 15px;border:1px solid #dfe3e8;}
-table th{background-color:#f4f6f8;font-weight:400}
-table th[scope='row']{background-color:transparent}
-table thead th{vertical-align:top;padding-top:20px;padding-bottom:20px}@media screen and (min-width: 46.875em){
-  table thead th{padding-left:5px;padding-right:5px}}
-table tbody th,
-table tbody td{text-align:left}
-table tbody tr:hover th:not([scope='col']),
-table tbody tr:hover td{background-color:#f4f6f8}
-table p{margin:0}
-table .cell--borderless {
-  border: 0;
-}
+  th,
+  td{
+    padding:8px 7px;
+    border:1px solid $color-border;
+  }
 
-.item-row{
-  //border-top: 1px solid $color-border;
+  th{
+    background-color:#f4f6f8;
+    font-weight:400;
+    &[scope='row']{
+      background-color:transparent;
+    }
+  }
+
+  thead th{
+    vertical-align:top;
+    padding-top:20px;
+    padding-bottom:20px
+  }
+
+  @media screen and (min-width: 46.875em){
+    thead th{
+      padding-left:5px;
+      padding-right:5px
+    }
+  }
+
+  tbody th,
+  tbody td{
+    text-align:left
+  }
+
+  tbody tr:hover th:not([scope='col']),
+  tbody tr:hover td{
+    background-color:$color-background;
+  }
+
+  p{
+    margin:0
+  }
+
+  .cell--borderless {
+    border: 0;
+  }
 }
 
 .delete-icon {
   width: 20px;
   height: 20px;
   display: block;
+  @media print {
+    display: none;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+      path {
+        transition: fill 150ms ease-in-out;
+        fill:$color-red;
+    }
+  }
 }
 
 .button  {
@@ -135,6 +202,17 @@ table .cell--borderless {
     background-color: darken($color-blue, 10%);
     cursor: pointer;
   }
+
+  @media print {
+    display: none;
+  }
+}
+
+.button-print {
+  font-size: 1.5em;
+  padding: .5em 1em;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
 .footer--break {
@@ -148,4 +226,28 @@ table .cell--borderless {
   &:active {
     cursor: pointer;
   }
+}
+
+.terms {
+  background-color: $color-background;
+  padding: .5em 1em 1em;
+
+  textarea {
+    display: block;
+    width: 100%;
+    background-color: $color-background;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($color-background, 5%);
+    textarea {
+      background-color: $color-blue--light;
+    }
+  }
+}
+
+.balance{
+  padding-left: 10px;
 }
